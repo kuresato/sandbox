@@ -1,10 +1,22 @@
 pipeline {
-    agent any
-
+    agent {
+        label 'maven'
+    }
     stages {
-        stage('Hello') {
+        stage('stage1') {
             steps {
-                echo 'Hello master branch'
+                sh """
+                    mvn -version
+                """
+            }
+        }
+        stage('stage2') {
+            steps {
+                sh """
+                    oc version
+                    oc whoami
+                    oc get pods -n jenkins
+                """
             }
         }
     }
