@@ -1,0 +1,69 @@
+[
+  {
+    "type": 1,
+    "title": "Gitlab CE HOGE",
+    "description": "Open-source end-to-end software development platform",
+    "note": "Default username is <b>root</b>. Check the <a href=\"https://docs.gitlab.com/omnibus/docker/README.html#after-starting-a-container\" target=\"_blank\">Gitlab documentation</a> to get started.",
+    "categories": ["development", "project-management"],
+    "platform": "linux",
+    "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/gitlab_ce.png",
+    "image": "gitlab/gitlab-ce:latest",
+    "ports": [
+      "80/tcp",
+      "443/tcp",
+      "22/tcp"
+    ],
+    "volumes": [
+      { "container": "/etc/gitlab" },
+      { "container": "/var/log/gitlab" },
+      { "container": "/var/opt/gitlab" }
+    ]
+  },
+  {
+    "type": 1,
+    "title": "Jenkins",
+    "description": "Open-source continuous integration tool",
+    "categories": ["continuous-integration"],
+    "platform": "linux",
+    "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/jenkins.png",
+    "image": "jenkins/jenkins:lts",
+    "ports": [
+      "8080/tcp",
+      "50000/tcp"
+    ],
+    "env": [
+      {
+        "name": "JENKINS_OPTS",
+        "label": "Jenkins options"
+      }
+    ],
+    "volumes": [{"container": "/var/jenkins_home"}]
+  },
+  {
+    "type": 1,
+    "title": "Redmine",
+    "description": "Open-source project management tool",
+    "categories": ["project-management"],
+    "platform": "linux",
+    "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/redmine.png",
+    "image": "redmine:latest",
+    "ports": [
+      "3000/tcp"
+    ],
+    "volumes": [{"container": "/usr/src/redmine/files"}]
+  },
+  {
+    "type": 1,
+    "title": "Sonatype Nexus3",
+    "description": "Sonatype Nexus3 registry manager",
+    "categories": ["docker"],
+    "platform": "linux",
+    "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/sonatype.png",
+    "image": "sonatype/nexus3:latest",
+    "ports": [
+      "8081/tcp"
+    ],
+    "volumes": [{ "container": "/nexus-data"}]
+  }
+]
+
