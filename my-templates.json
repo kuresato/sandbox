@@ -1,7 +1,7 @@
 [
   {
     "type": 1,
-    "title": "Gitlab CE HOGE --> FUGE",
+    "title": "Gitlab CE HOGE --> FUGE --> PAGE",
     "description": "Open-source end-to-end software development platform",
     "note": "Default username is <b>root</b>. Check the <a href=\"https://docs.gitlab.com/omnibus/docker/README.html#after-starting-a-container\" target=\"_blank\">Gitlab documentation</a> to get started.",
     "categories": ["development", "project-management"],
